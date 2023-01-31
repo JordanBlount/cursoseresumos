@@ -1,25 +1,27 @@
+import { SITE_URL } from "~/constant"
+
 export let siteMetadata = {
-  title: "Leo's blog - Leo's coding journey",
-  author: 'Leo Huynh',
-  fullName: 'Tuan Anh Huynh',
-  headerTitle: "Leo's blog - Leo's coding journey",
-  footerTitle: "Leo's blog - Leo's coding journey",
+  title: "Curso Idealtec",
+  author: 'Carla Rodrigues',
+  fullName: 'Carla Rodrigues',
+  headerTitle: "Cursos para te ajudar a ter sucesso",
+  footerTitle: "Cursos para te ajudar a ter sucesso",
   description:
-    "Leo's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
+    "Curso Idealtec - Cursos para te ajudar a ter sucesso",
   language: 'en-us',
-  siteUrl: 'https://www.leohuynh.dev',
-  siteRepo: 'https://github.com/hta218/leohuynh.dev',
+  siteUrl: SITE_URL,
+  siteRepo: '',
   siteLogo: '/static/images/logo.jpg',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
-  email: 'leohuynh@pm.me',
-  github: 'https://github.com/hta218',
-  twitter: 'https://twitter.com/hta218_',
-  facebook: 'https://facebook.com/hta218',
-  youtube: 'https://www.youtube.com/@hta218_',
-  linkedin: 'https://www.linkedin.com/in/hta218/',
+  email: '',
+  github: '',
+  twitter: '',
+  facebook: '',
+  youtube: '',
+  linkedin: '',
   locale: 'en-US',
-  analyticsURL: 'https://analytics.leohuynh.dev/share/AwnJYH6n/leohuynh.dev',
+  analyticsURL: '',
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
