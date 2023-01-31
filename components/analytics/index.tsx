@@ -11,9 +11,9 @@ export function Analytics() {
     let { simpleAnalytics, umamiWebsiteId, googleAnalyticsId } = analytics
     return (
       <>
-        {simpleAnalytics && <SimpleAnalyticsScript />}
-        {umamiWebsiteId && <UmamiScript />}
-        {googleAnalyticsId && <GAScript />}
+        {/* {simpleAnalytics && <SimpleAnalyticsScript />} */}
+        {/* {umamiWebsiteId && <UmamiScript />} */}
+        {/* {googleAnalyticsId && <GAScript />} */}
       </>
     )
   }

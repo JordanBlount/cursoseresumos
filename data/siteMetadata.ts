@@ -25,13 +25,13 @@ export let siteMetadata = {
   analytics: {
     plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
-    umamiWebsiteId: '32292c48-85c6-4338-85ff-a8d37482bb99', // e.g. 123e4567-e89b-12d3-a456-426614174000
+    umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
-    github: 'hta218',
-    twitter: 'hta218_',
-    linkedin: 'hta218',
+    github: '',
+    twitter: '',
+    linkedin: '',
   },
 }
 
