@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Link } from '~/components/Link'
-import { Twemoji } from '~/components/Twemoji'
 
 export default function FourZeroFour() {
   return (
@@ -11,7 +10,7 @@ export default function FourZeroFour() {
       <div className="space-x-2 pt-8 md:space-y-5 md:pt-12 xl:pt-16">
         <div className="max-w-md text-center">
           <p className="mb-4 text-xl font-bold leading-normal md:text-2xl">
-            Hmm.. it seems that you're lost <Twemoji emoji={'face-with-monocle'} />
+            Hmm.. it seems that you're lost.
           </p>
           <p className="mb-8">
             But don't worry, you can find plenty of other things on my homepage.

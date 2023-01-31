@@ -2,7 +2,6 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { bundleMDX } from 'mdx-bundler'
 import path from 'path'
-import readingTime from 'reading-time'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePresetMinify from 'rehype-preset-minify'
 import rehypePrismPlus from 'rehype-prism-plus'
@@ -95,7 +94,6 @@ export async function getFileBySlug(type: string, slug: string): Promise<MdxFile
     toc,
     mdxSource: code,
     frontMatter: {
-      readingTime: readingTime(code),
       slug: slug || null,
       fileName: fs.existsSync(mdxPath) ? `${slug}.mdx` : `${slug}.md`,
       ...frontmatter,

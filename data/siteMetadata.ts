@@ -5,7 +5,7 @@ export let siteMetadata = {
   author: 'Carla Rodrigues',
   fullName: 'Carla Rodrigues',
   headerTitle: "Cursos para te ajudar a ter sucesso",
-  footerTitle: "Cursos para te ajudar a ter sucesso",
+  footerTitle: "Curso IdealTec - Cursos para te ajudar a ter sucesso",
   description:
     "Curso Idealtec - Cursos para te ajudar a ter sucesso",
   language: 'en-us',
