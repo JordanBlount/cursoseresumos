@@ -1,10 +1,9 @@
 import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
+import { SITE_URL } from "../constant"
 
-let SITE_URL = 'https://www.leohuynh.dev'
-
-;(async () => {
+(async () => {
   console.log('Generating sitemap...')
   let prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   let pages = await globby([
@@ -20,22 +19,22 @@ let SITE_URL = 'https://www.leohuynh.dev'
 			<?xml version="1.0" encoding="UTF-8"?>
 			<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 				${pages
-          .map((page) => {
-            let path = page
-              .replace('pages/', '/')
-              .replace('data/blog', '/blog')
-              .replace('public/', '/')
-              .replace('.ts', '')
-              .replace('.mdx', '')
-              .replace('.md', '')
-              .replace('/feed.xml', '')
-            let route = path === '/index' ? '' : path
-            if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
-              return
-            }
-            return `<url><loc>${SITE_URL}${route}</loc></url>\n`
-          })
-          .join('')}
+      .map((page) => {
+        let path = page
+          .replace('pages/', '/')
+          .replace('data/blog', '/blog')
+          .replace('public/', '/')
+          .replace('.ts', '')
+          .replace('.mdx', '')
+          .replace('.md', '')
+          .replace('/feed.xml', '')
+        let route = path === '/index' ? '' : path
+        if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
+          return
+        }
+        return `<url><loc>${SITE_URL}${route}</loc></url>\n`
+      })
+      .join('')}
 			</urlset>
     `
 

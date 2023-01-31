@@ -15,6 +15,8 @@ export let SPOTIFY_TOKEN_API = `https://accounts.spotify.com/api/token`
 export let SPOTIFY_NOW_PLAYING_API = `https://api.spotify.com/v1/me/player/currently-playing`
 export let SPOTIFY_TOP_TRACKS_API = `https://api.spotify.com/v1/me/top/tracks`
 
+export let SITE_URL = "https://cursoidealtec.com.br"
+
 export let TOKEN_CLASSNAME_MAP = {
   tag: 'text-code-red',
   'attr-name': 'text-code-yellow',
