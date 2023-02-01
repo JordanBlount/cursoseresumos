@@ -9,7 +9,7 @@ import { siteMetadata } from '~/data/siteMetadata'
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   let router = useRouter()
   return (
-    <header className="overflow-x-hidden bg-white py-12 backdrop-blur dark:bg-dark">
+    <header className="overflow-x-hidden bg-transparent py-12">
       {/* NOTE: Example of how the outside container should wrap most components */}
       <div className="mx-auto flex max-w-3xl items-center justify-between px-5 lg:px-0 xl:max-w-5xl">
         <div>

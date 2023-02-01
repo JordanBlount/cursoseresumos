@@ -10,6 +10,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        dots: 'radial-gradient(circle at center, #037A76 0%, #037A76 30%, transparent 30%)',
+      },
       keyframes: {
         wiggle: {
           '0%': { transform: 'rotate(0deg)' },
