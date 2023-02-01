@@ -8,6 +8,7 @@ let MDXComponents = {
   a: Link,
   pre: Pre,
   wrapper: ({ components, layout, ...rest }) => {
+    // NOTE: How to load components or files dynamically
     let Layout = require(`../layouts/${layout}`).default
     return <Layout {...rest} />
   },

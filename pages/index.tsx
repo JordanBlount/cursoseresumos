@@ -12,6 +12,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
+      slols
     </>
   )
 }
