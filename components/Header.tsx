@@ -21,8 +21,8 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
             </div>
           </Link>
         </div>
-        <div className="flex items-center">
-          <div className="hidden space-x-2 sm:block">
+        <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8">
+          <div className="hidden space-x-2 sm:block sm:space-x-4 md:space-x-8">
             {headerNavLinks.map((link) => {
               let className = clsx(
                 // NOTE: The padding is causing the nav bar to jumping when transitioning from a larger screen to mobile
