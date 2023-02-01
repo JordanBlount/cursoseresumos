@@ -15,3 +15,6 @@ https://icons.radix-ui.com/
 https://design-system.modulz-deploys.com/#
 
 https://blog.makerx.com.au/styling-radix-ui-components-using-tailwind-css/
+
+How stick position works:
+https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46

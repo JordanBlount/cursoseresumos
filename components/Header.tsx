@@ -1,27 +1,22 @@
 import clsx from 'clsx'
 import { headerNavLinks } from 'data/headerNavLinks'
-import NextImage from 'next/image'
 import { useRouter } from 'next/router'
-import { AnalyticsLink } from './AnalyticsLink'
 import { Link } from './Link'
 import { ThemeSwitcher } from './ThemeSwitcher'
+import { Logo } from './Logo'
+import { siteMetadata } from '~/data/siteMetadata'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   let router = useRouter()
   return (
-    <header className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 overflow-x-hidden bg-white/75 py-3 backdrop-blur dark:bg-dark/75">
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-3 xl:max-w-5xl xl:px-0">
+    <header className="overflow-x-hidden bg-white py-12 backdrop-blur dark:bg-dark">
+      {/* NOTE: Example of how the outside container should wrap most components */}
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-5 lg:px-0 xl:max-w-5xl">
         <div>
-          <Link href="/" aria-label="Leo's Blog">
+          <Link href="/" aria-label={`${siteMetadata.title}'s website homepage`}>
             <div className="umami--click--logo flex items-center justify-between">
               <div className="mr-3 flex items-center justify-center">
-                <NextImage
-                  src="/static/images/logo.jpg"
-                  alt="Leo's Blog logo"
-                  width={45}
-                  height={45}
-                  className="rounded-full"
-                />
+                <Logo />
               </div>
             </div>
           </Link>
@@ -43,7 +38,6 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
               )
             })}
           </div>
-          <AnalyticsLink />
           <ThemeSwitcher />
           <button
             className="umami--click--mobile-nav-toggle ml-2 mr-1 h-8 w-8 rounded sm:hidden"
