@@ -26,7 +26,8 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
             {headerNavLinks.map((link) => {
               let className = clsx(
                 // NOTE: The padding is causing the nav bar to jumping when transitioning from a larger screen to mobile
-                'inline-block rounded text-lg font-medium text-gray-900 dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
+                // sm:py-2 sm:px-3
+                'inline-block rounded text-lg font-medium text-gray-900 dark:text-gray-100 py-1 px-2',
                 router.pathname === link.href
                   ? 'bg-gray-200 dark:bg-gray-700'
                   : 'hover:bg-gray-200 dark:hover:bg-gray-700',

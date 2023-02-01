@@ -10,6 +10,7 @@ export function LayoutWrapper({ children }) {
 
   return (
     <>
+      {/* NOTE: If i want to, I can change this to "min-h-[100svh] and add flex grow to the main element" */}
       <div className="flex flex-col justify-between">
         <MobileNav navShow={navShow} onToggleNav={onToggleNav} />
         <Header onToggleNav={onToggleNav} />
