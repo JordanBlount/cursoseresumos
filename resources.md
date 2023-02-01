@@ -1,5 +1,24 @@
 # Resources
 
+TODO
+
+- Things to finish
+
+  - Add "Jump to content"
+  - Add colors
+  - Add text sizes
+  - Add focus ring colors
+  - Add Radix UI (along with tailwind stuff)
+  - Create search
+  - Add colors to "html" element for overscroll
+  - Add all things to make website seem like "mobile app" (There is a tutorial somewhere)
+  - Create favicon
+  - Create og images
+  - Style links and buttons
+
+- Fixes
+  - Remove zooming from search input
+
 https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-using-ui-libraries-a8208197c268
 
 https://react-spectrum.adobe.com/react-aria/index.html

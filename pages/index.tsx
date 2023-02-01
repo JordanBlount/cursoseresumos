@@ -33,10 +33,23 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         </div>
         <section id="sobrenos" className="mb-12">
           <h2 className="mb-6 text-center text-4xl font-bold text-[#037A76]">Sobre Nós</h2>
-          <p className="mx-auto max-w-2xl text-base">
-            Lorem ipsum dolor sit amet consectetur. Congue ut lorem nunc volutpat sed in amet risus
-            scelerisque. Pharetra nullam feugiat blandit dictum sit vitae risus.
+          <p className="mx-auto max-w-xl text-base text-[#262626] dark:text-gray-300">
+            Nossos cursos são feitos para te ajudar a conseguir passar suas provas tranquilamente.
+            Temos muitas opçãos abaixo. Se não tiver o que está buscando, pode crer que já vai
+            chegar!
           </p>
+        </section>
+        <section id="sobrenos" className="my-24 md:my-36">
+          <h2 className="mb-6 text-center text-4xl font-bold text-[#037A76]">Cursos</h2>
+          <div>
+            <input
+              type="text"
+              id="course-search"
+              className="mx-auto block w-full max-w-xl rounded-lg border border-gray-300 bg-gray-100/20 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              placeholder="Busca"
+              required
+            />
+          </div>
         </section>
       </Container>
     </>
