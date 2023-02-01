@@ -24,7 +24,9 @@ export function Footer() {
             })}
           </div>
           <div className="group mb-2 mt-14 flex flex-col items-center justify-center text-sm text-white sm:mt-8">
-            <MadeInAtlanta />
+            <Link href="https://jordanblount.com">
+              <MadeInAtlanta />
+            </Link>
             <div className="transition-all duration-300 ease-out group-hover:opacity-50">{`Copyright © ${new Date().getFullYear()} ${
               siteMetadata.author
             }`}</div>

@@ -1,5 +1,6 @@
 import { PageSeo } from 'components/SEO'
 import Container from '~/components/Container'
+import { Link } from '~/components/Link'
 import { HEADER_HEIGHT } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { BlogFrontMatter } from '~/types'
@@ -23,12 +24,12 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             <h1 className="mx-auto text-center text-4xl font-bold text-[#3D3D3D] dark:text-gray-100 sm:text-5xl sm:leading-none md:text-[54px]">
               Cursos para te ajudar <br /> a ter sucesso
             </h1>
-            <a
-              href="#"
+            <Link
+              href="#cursos"
               className="mt-7 block rounded-lg bg-[#E9DAAC] py-3 px-7 font-bold uppercase text-[#616161]"
             >
               Cursos
-            </a>
+            </Link>
           </div>
         </div>
         <section id="sobrenos" className="mb-12">
@@ -39,7 +40,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             chegar!
           </p>
         </section>
-        <section id="sobrenos" className="my-24 md:my-36">
+        <section id="cursos" className="my-24 md:my-36">
           <h2 className="mb-6 text-center text-4xl font-bold text-[#037A76]">Cursos</h2>
           <div>
             <input
