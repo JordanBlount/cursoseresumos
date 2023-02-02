@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="h-6 w-6 text-gray-900 dark:text-gray-100"
+        className="h-6 w-6 text-h1-light dark:text-h1-dark"
       >
         {mounted && isDark ? (
           <path

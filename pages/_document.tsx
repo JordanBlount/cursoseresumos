@@ -20,7 +20,8 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-white text-black antialiased dark:bg-dark dark:text-white">
+        {/* NOTE: All of the body text is set by default here */}
+        <body className="bg-white text-body-light antialiased dark:bg-dark dark:text-body-dark">
           <Main />
           <NextScript />
         </body>

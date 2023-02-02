@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        dots: 'radial-gradient(circle at center, #037A76 0%, #037A76 30%, transparent 30%)',
+        dots: `radial-gradient(circle at center, #037A76 0%, #037A76 30%, transparent 30%)`,
       },
       spacing: {
         '9/16': '56.25%',
@@ -26,10 +26,29 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.indigo,
-        gray: colors.gray,
         dark: '#22272e',
-        brand: '#037A76',
+        primary: '#037A76',
+        accent: '#E9DAAC',
+        'button-text': '#616161',
+        body: {
+          light: '#262626',
+          dark: colors.gray[300],
+        },
+        h1: {
+          light: '#3D3D3D',
+          dark: colors.gray[100],
+        },
+        prompt: {
+          divider: '#176461',
+          content: {
+            light: '#FAFAFA',
+            dark: '#3A3E43',
+          },
+          'border-l-r': {
+            light: '#E6E6E6',
+            dark: '#505050',
+          },
+        },
         code: {
           green: '#b5f4a5',
           yellow: '#ffe484',
