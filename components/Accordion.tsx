@@ -70,7 +70,7 @@ const Accordion = (props: AccordionProps) => {
               <div className="text-base text-body-light dark:text-body-dark">{content}</div>
               <Link
                 href="#cursos"
-                className="mt-4 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
+                className="mt-4 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
               >
                 Compre
               </Link>

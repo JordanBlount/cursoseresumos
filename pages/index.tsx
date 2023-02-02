@@ -41,7 +41,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             </h1>
             <Link
               href="#cursos"
-              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
+              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
             >
               Cursos
             </Link>

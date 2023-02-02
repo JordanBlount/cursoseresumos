@@ -17,7 +17,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
             href="/"
             aria-label={`${siteMetadata.title}'s website homepage`}
             className={
-              'block rounded focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary'
+              'block rounded ring-emerald-400 focus-visible:outline-none focus-visible:ring-4'
             }
           >
             <div className="umami--click--logo flex items-center justify-between">
@@ -33,8 +33,8 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
               let className = clsx(
                 // NOTE: The padding is causing the nav bar to jumping when transitioning from a larger screen to mobile
                 // sm:py-2 sm:px-3
-                //ocus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary
-                'inline-block rounded text-lg font-medium text-h1-light dark:text-h1-dark py-1 px-2 focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none',
+                //ocus-visible:ring-2 ring-emerald-400 focus-visible:border-primary
+                'inline-block rounded text-lg font-medium text-h1-light dark:text-h1-dark py-1 px-2 focus-visible:ring-4 ring-emerald-400 focus-visible:outline-none',
                 router.pathname === link.href
                   ? 'bg-gray-200 dark:bg-gray-700'
                   : 'hover:bg-gray-200 dark:hover:bg-gray-700',

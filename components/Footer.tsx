@@ -14,7 +14,7 @@ export function Footer() {
             {headerNavLinks.map((link) => {
               let className = clsx(
                 // NOTE: The padding is causing the nav bar to jumping when transitioning from a larger screen to mobile
-                'inline-block rounded text-lg font-medium text-white py-1 px-2 sm:py-2 sm:px-3 focus-visible:ring-4 focus-visible:ring-accent focus-visible:outline-none'
+                'inline-block rounded text-lg font-medium text-white py-1 px-2 sm:py-2 sm:px-3 focus-visible:ring-4 ring-emerald-400 focus-visible:outline-none'
               )
               return (
                 <Link key={link.title} href={link.href} className={className}>
@@ -26,7 +26,7 @@ export function Footer() {
           <div className="group mb-2 mt-14 flex flex-col items-center justify-center text-sm text-white sm:mt-8">
             <Link
               href="https://jordanblount.com"
-              className="rounded focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent"
+              className="rounded ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
             >
               <MadeInAtlanta />
             </Link>
