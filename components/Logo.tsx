@@ -6,6 +6,7 @@ export const Logo = ({ width = 203, height = 23 }: { width?: number; height?: nu
       viewBox="0 0 203 23"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className=""
     >
       <path
         className="fill-[#3D3D3D] dark:fill-white"

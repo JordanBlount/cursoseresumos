@@ -13,9 +13,15 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
       {/* NOTE: Example of how the outside container should wrap most components */}
       <div className="mx-auto flex max-w-3xl items-center justify-between px-5 lg:px-0 xl:max-w-5xl">
         <div>
-          <Link href="/" aria-label={`${siteMetadata.title}'s website homepage`}>
+          <Link
+            href="/"
+            aria-label={`${siteMetadata.title}'s website homepage`}
+            className={
+              'block rounded focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary'
+            }
+          >
             <div className="umami--click--logo flex items-center justify-between">
-              <div className="mr-3 flex items-center justify-center">
+              <div className="flex items-center justify-center py-1 px-2 ">
                 <Logo />
               </div>
             </div>
@@ -27,15 +33,16 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
               let className = clsx(
                 // NOTE: The padding is causing the nav bar to jumping when transitioning from a larger screen to mobile
                 // sm:py-2 sm:px-3
-                'inline-block rounded text-lg font-medium text-h1-light dark:text-h1-dark py-1 px-2',
+                //ocus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary
+                'inline-block rounded text-lg font-medium text-h1-light dark:text-h1-dark py-1 px-2 focus-visible:ring-4 focus-visible:ring-primary focus-visible:outline-none',
                 router.pathname === link.href
                   ? 'bg-gray-200 dark:bg-gray-700'
                   : 'hover:bg-gray-200 dark:hover:bg-gray-700',
                 `umami--click--nav-${link.href.replace('/', '')}`
               )
               return (
-                <Link key={link.title} href={link.href}>
-                  <span className={className}>{link.title}</span>
+                <Link key={link.title} href={link.href} className={className}>
+                  <span>{link.title}</span>
                 </Link>
               )
             })}

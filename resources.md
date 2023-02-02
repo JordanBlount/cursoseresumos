@@ -5,8 +5,8 @@ TODO
 - Things to finish
 
   - Add "Jump to content"
-  - Add colors
-  - Add text sizes
+  - (done) Add colors
+  - (done) Add text sizes
   - Add focus ring colors
   - Add Radix UI (along with tailwind stuff)
   - Create search

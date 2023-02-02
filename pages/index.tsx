@@ -29,7 +29,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             </h1>
             <Link
               href="#cursos"
-              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text"
+              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary"
             >
               Cursos
             </Link>
@@ -49,12 +49,11 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             <input
               type="text"
               id="course-search"
-              className="mx-auto block w-full max-w-xl rounded-lg border border-gray-300 bg-gray-100/20 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+              className="mx-auto block w-full max-w-xl rounded-lg border border-gray-300 bg-gray-100/20 p-2.5 text-sm text-gray-900 focus-visible:border-blue-500 focus-visible:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus-visible:border-blue-500 dark:focus-visible:ring-blue-500"
               placeholder="Busca"
               required
             />
           </div>
-          lol
         </section>
       </Container>
     </>
