@@ -3,15 +3,24 @@
 @tailwind utilities;
 
 html {
-  /* scroll-behavior: smooth;
-  overflow-x: hidden; */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html.prevent-scroll {
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
 }
 
 /* NOTE: Makes the transition from light to dark smooth */
-* {
-  /* transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button {
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
