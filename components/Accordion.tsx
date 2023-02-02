@@ -42,7 +42,7 @@ const Accordion = (props: AccordionProps) => {
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
-          className="w-full first:rounded-t-lg last:rounded-b-lg"
+          className="w-full first:rounded-t-lg last:rounded-b-lg [&:not(:last-child):not(:first-child)]:border-b [&:not(:last-child):not(:first-child)]:border-b-primary/60"
         >
           <AccordionPrimitive.Header className="focus-vsisible:bg-red-100 w-full rounded-t-[inherit] rounded-b-[inherit]">
             <AccordionPrimitive.Trigger
