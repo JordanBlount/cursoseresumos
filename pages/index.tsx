@@ -66,8 +66,10 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
                       className="inline-flex cursor-pointer items-center justify-between bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400"
                     >
                       <div className="flex flex-col">
-                        <span className="text-base font-bold text-white">Test</span>
-                        <span className="-translate-y-0.5 text-xs font-light text-white">Test</span>
+                        <span className="text-base font-bold text-white">A Biología: Parte 1</span>
+                        <span className="-translate-y-0.5 text-xs font-light text-white">
+                          Cursos Livres
+                        </span>
                       </div>
                       <svg
                         width="30"
