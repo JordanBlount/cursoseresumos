@@ -59,9 +59,12 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             <div className="mx-auto hidden max-w-4xl grid-cols-2 gap-4 sm:grid md:grid-cols-3">
               {Array(4)
                 .fill(null)
-                .map((item) => {
+                .map((item, i) => {
                   return (
-                    <button className="inline-flex cursor-pointer items-center justify-between bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400">
+                    <button
+                      key={i}
+                      className="inline-flex cursor-pointer items-center justify-between bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400"
+                    >
                       <div className="flex flex-col">
                         <span className="text-base font-bold text-white">Test</span>
                         <span className="-translate-y-0.5 text-xs font-light text-white">Test</span>

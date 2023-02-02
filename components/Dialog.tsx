@@ -14,7 +14,7 @@ const Dialog = (props: DialogProps) => {
         <button>Test</button>
       </DialogPrimitive.Trigger>
       <DialogPrimitive.Portal>
-        <Transition show={isOpen}>
+        <Transition.Root show={isOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -24,7 +24,7 @@ const Dialog = (props: DialogProps) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <DialogPrimitive.Overlay forceMount className="fixed inset-0 z-20 bg-black/50" />
+            <DialogPrimitive.Overlay forceMount className="fixed inset-0 z-[99] bg-black/50" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -38,7 +38,7 @@ const Dialog = (props: DialogProps) => {
             <DialogPrimitive.Content
               forceMount
               className={clsx(
-                'fixed z-50',
+                'fixed z-[100]',
                 'w-[95vw] max-w-md rounded-lg p-4 md:w-full',
                 'top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]',
                 'bg-white dark:bg-gray-800',
@@ -75,7 +75,7 @@ const Dialog = (props: DialogProps) => {
               </DialogPrimitive.Close>
             </DialogPrimitive.Content>
           </Transition.Child>
-        </Transition>
+        </Transition.Root>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   )

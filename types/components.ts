@@ -3,7 +3,7 @@ import type React from 'react'
 import type { SocialIconsMap } from '~/components/SocialIcon'
 import type { projectsData } from '~/data/projectsData'
 import type { commentConfig } from '~/data/siteMetadata'
-import type { MdxFrontMatter, ReadingTime } from './mdx'
+import type { MdxFrontMatter } from './mdx'
 
 export interface PageTitleProps {
   children: React.ReactNode
@@ -53,7 +53,7 @@ export interface ViewCounterProps {
 export interface BlogHeaderProps {
   title: string
   date: string
-  readingTime: ReadingTime
+  // readingTime: ReadingTime
 }
 
 export type CommentConfigType = typeof commentConfig
@@ -61,7 +61,7 @@ export type CommentConfigType = typeof commentConfig
 export interface BlogMetaProps {
   date: string
   slug: string
-  readingTime: ReadingTime
+  // readingTime: ReadingTime
 }
 
 export interface CommentsProps {

@@ -1,4 +1,4 @@
-export default () => {
+const MadeInAtlanta = () => {
   const duration = 'duration-300'
   const ease = 'transition-all ease-in-out'
 
@@ -44,3 +44,5 @@ export default () => {
     </svg>
   )
 }
+
+export default MadeInAtlanta

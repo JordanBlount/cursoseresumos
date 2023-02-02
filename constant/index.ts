@@ -7,7 +7,7 @@ export let HEADER_HEIGHT = '140px' // 132px on mobile
 export let FOOTER_HEIGHT = '0px' // 116px atm
 export let MAIN_CONTENT_MIN_HEIGHT = `calc(100svh - ${HEADER_HEIGHT} - ${FOOTER_HEIGHT})`
 
-export let SITE_URL = "https://cursoidealtec.com.br"
+export let SITE_URL = 'https://cursoidealtec.com.br'
 
 export let TOKEN_CLASSNAME_MAP = {
   tag: 'text-code-red',
