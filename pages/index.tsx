@@ -95,7 +95,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           </div>
         </section>
       </Container>
-      <Dialog />
+      {/* <Dialog /> */}
     </>
   )
 }

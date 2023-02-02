@@ -26,8 +26,7 @@ interface AccordionItem {
 // ]
 
 const items: AccordionItem[] = Array(10).fill({
-  header:
-    'A Biología: Parte 1 - A study of the best science | A Biología: Parte 1 - A study of the best science',
+  header: 'A Biología: Parte 1 - Um resumo da ciênica moderna',
   tag: 'Curso Livres',
   content:
     'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
@@ -42,7 +41,7 @@ const Accordion = (props: AccordionProps) => {
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
-          className="w-full first:rounded-t-lg last:rounded-b-lg [&:not(:last-child):not(:first-child)]:border-b [&:not(:last-child):not(:first-child)]:border-b-primary/60"
+          className="w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
         >
           <AccordionPrimitive.Header className="focus-vsisible:bg-red-100 w-full rounded-t-[inherit] rounded-b-[inherit]">
             <AccordionPrimitive.Trigger
