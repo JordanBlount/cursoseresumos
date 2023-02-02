@@ -7,7 +7,7 @@ import MadeInAtlanta from './MadeInAtlanta'
 
 export function Footer() {
   return (
-    <footer className="bg-[#037A76]">
+    <footer className="bg-brand">
       <Container>
         <div className="mt-14 mb-8 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-9 text-center sm:flex-row">

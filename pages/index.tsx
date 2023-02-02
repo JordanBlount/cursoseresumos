@@ -8,7 +8,10 @@ import type { BlogFrontMatter } from '~/types'
 export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
   return (
     <>
-      <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
+      <PageSeo
+        title={siteMetadata.title + ' | ' + siteMetadata.headerTitle}
+        description={siteMetadata.description}
+      />
       <Container>
         {/* NOTE: I can add "-10px" here in the mininum height to expose content under this */}
         <div
@@ -33,7 +36,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           </div>
         </div>
         <section id="sobrenos" className="mb-12">
-          <h2 className="mb-6 text-center text-4xl font-bold text-[#037A76]">Sobre Nós</h2>
+          <h2 className="mb-6 text-center text-4xl font-bold text-brand">Sobre Nós</h2>
           <p className="mx-auto max-w-xl text-base text-[#262626] dark:text-gray-300">
             Nossos cursos são feitos para te ajudar a conseguir passar suas provas tranquilamente.
             Temos muitas opçãos abaixo. Se não tiver o que está buscando, pode crer que já vai
@@ -41,7 +44,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           </p>
         </section>
         <section id="cursos" className="my-24 md:my-36">
-          <h2 className="mb-6 text-center text-4xl font-bold text-[#037A76]">Cursos</h2>
+          <h2 className="mb-6 text-center text-4xl font-bold text-brand">Cursos</h2>
           <div>
             <input
               type="text"
