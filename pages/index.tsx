@@ -1,6 +1,7 @@
 import { PageSeo } from 'components/SEO'
 import { Accordion } from '~/components/Accordion'
 import Container from '~/components/Container'
+import { Dialog } from '~/components/Dialog'
 import { Link } from '~/components/Link'
 import { HEADER_HEIGHT } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
@@ -60,7 +61,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
                 .fill(null)
                 .map((item) => {
                   return (
-                    <div className="inline-flex items-center justify-between bg-primary px-7 py-8 text-left focus-within:relative hover:bg-[#026a66] focus-visible:shadow-[0_0px_0px_4px_rgba(233,218,172,1)]">
+                    <button className="inline-flex cursor-pointer items-center justify-between bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400">
                       <div className="flex flex-col">
                         <span className="text-base font-bold text-white">Test</span>
                         <span className="-translate-y-0.5 text-xs font-light text-white">Test</span>
@@ -77,7 +78,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
                           fill="white"
                         />
                       </svg>
-                    </div>
+                    </button>
                   )
                 })}
             </div>
@@ -87,6 +88,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           </div>
         </section>
       </Container>
+      <Dialog />
     </>
   )
 }
