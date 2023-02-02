@@ -26,7 +26,8 @@ interface AccordionItem {
 // ]
 
 const items: AccordionItem[] = Array(10).fill({
-  header: 'A Biología: Parte 1',
+  header:
+    'A Biología: Parte 1 - A study of the best science | A Biología: Parte 1 - A study of the best science',
   tag: 'Curso Livres',
   content:
     'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
@@ -49,12 +50,12 @@ const Accordion = (props: AccordionProps) => {
                 'group',
                 'focus:outline-none',
                 'rounded-t-[inherit] radix-state-closed:rounded-b-[inherit]',
-                'focus-within:z-1 inline-flex w-full items-center justify-between bg-primary px-7 py-8 text-left focus-within:relative hover:bg-[#026a66] focus-visible:shadow-[0_0px_0px_4px_rgba(233,218,172,1)] radix-state-open:bg-[#026a66]'
+                'focus-within:z-1 inline-flex w-full items-center justify-between gap-2 bg-primary px-7 py-8 text-left focus-within:relative hover:bg-[#026a66] focus-visible:shadow-[0_0px_0px_4px_rgba(233,218,172,1)] radix-state-open:bg-[#026a66]'
               )}
             >
               <div className="flex flex-col">
                 <span className="text-base font-bold text-white">{header}</span>
-                <span className="-translate-y-0.5 text-xs font-light text-white">{tag}</span>
+                <span className="font-base text-base text-gray-300">{tag}</span>
               </div>
               <ChevronDownIcon
                 className={clsx(
