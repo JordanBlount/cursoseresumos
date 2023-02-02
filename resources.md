@@ -7,10 +7,9 @@ TODO
   - Add "Jump to content"
   - (done) Add colors
   - (done) Add text sizes
-  - Add focus ring colors
+  - (done) Add focus ring colors
   - Add Radix UI (along with tailwind stuff)
   - Create search
-  - Add colors to "html" element for overscroll
   - Add all things to make website seem like "mobile app" (There is a tutorial somewhere)
   - Create favicon
   - Create og images

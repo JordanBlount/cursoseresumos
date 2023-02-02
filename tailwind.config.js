@@ -78,5 +78,9 @@ module.exports = {
   variants: {
     typography: ['dark'],
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-radix')(),
+  ],
 }

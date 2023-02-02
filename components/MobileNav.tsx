@@ -12,7 +12,7 @@ export function MobileNav({ navShow, onToggleNav }) {
       <button
         type="button"
         aria-label="toggle modal"
-        className="fixed right-4 top-4 h-8 w-8 cursor-auto cursor-pointer focus:outline-none"
+        className="fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none"
         onClick={onToggleNav}
       >
         <svg

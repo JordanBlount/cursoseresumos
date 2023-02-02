@@ -1,4 +1,5 @@
 import { PageSeo } from 'components/SEO'
+import { Accordion } from '~/components/Accordion'
 import Container from '~/components/Container'
 import { Link } from '~/components/Link'
 import { HEADER_HEIGHT } from '~/constant'
@@ -24,8 +25,9 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           <div className="dark:opacity-15 absolute top-16 left-10 z-[-1] hidden h-[400px] w-[500px] bg-dots bg-[length:1rem_1rem] opacity-10 sm:block xl:w-[650px]"></div>
           <div className="-mt-[280px] flex flex-col items-center justify-center pt-[5rem]">
             {/* NOTE: Feels slightly hacky, but removes all widows */}
-            <h1 className="mx-auto text-center text-4xl font-bold text-h1-light dark:text-h1-dark sm:text-5xl sm:leading-none md:text-[54px]">
-              Cursos para te ajudar <br /> a ter sucesso
+            <h1 className="mx-auto text-center text-3xl font-bold text-h1-light dark:text-h1-dark sm:text-5xl sm:leading-none md:text-[54px]">
+              Cursos para te ajudar
+              <br />a ter sucesso
             </h1>
             <Link
               href="#cursos"
@@ -45,7 +47,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         </section>
         <section id="cursos" className="my-24 md:my-36">
           <h2 className="mb-6 text-center text-4xl font-bold text-primary">Cursos</h2>
-          <div>
+          <div className="space-y-6">
             <input
               type="text"
               id="course-search"
@@ -53,6 +55,9 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
               placeholder="Busca"
               required
             />
+            <div className="mx-auto max-w-xl">
+              <Accordion />
+            </div>
           </div>
         </section>
       </Container>
