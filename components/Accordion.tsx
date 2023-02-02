@@ -36,7 +36,7 @@ interface AccordionProps {}
 
 const Accordion = (props: AccordionProps) => {
   return (
-    <AccordionPrimitive.Root type="single" defaultValue="item-1" className={clsx('')}>
+    <AccordionPrimitive.Root type="single" defaultValue="item-1" className={clsx('sm:hidden')}>
       {items.map(({ header, tag, content }, i) => (
         <AccordionPrimitive.Item
           key={`header-${i}`}
