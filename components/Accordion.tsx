@@ -4,10 +4,11 @@ import { clsx } from 'clsx'
 import React from 'react'
 import { Link } from './Link'
 
-interface AccordionItem {
+export interface CursoItem {
   header: string
+  description?: string
   tag: string
-  content: string
+  content?: string
 }
 
 // const items: AccordionItem[] = [
@@ -25,7 +26,7 @@ interface AccordionItem {
 //   },
 // ]
 
-const items: AccordionItem[] = Array(10).fill({
+const items: CursoItem[] = Array(10).fill({
   header: 'A Biología: Parte 1 - Um resumo da ciênica moderna',
   tag: 'Curso Livres',
   content:
