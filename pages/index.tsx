@@ -8,15 +8,16 @@ import { HEADER_HEIGHT } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { BlogFrontMatter } from '~/types'
 
-export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
-  const items: CursoItem[] = Array(4).fill({
-    header: 'A Biología: Parte 1',
-    description: ' - Um resumo da ciênica moderna',
-    tag: 'Curso Livres',
-    content:
-      'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-  })
+const items: CursoItem[] = Array(4).fill({
+  header: 'A Biología: Parte 1',
+  description: ' - Um resumo da ciênica moderna',
+  tag: 'Curso Livres',
+  content:
+    'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
+  link: 'https://google.com',
+})
 
+export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
   return (
     <>
       <PageSeo
@@ -41,13 +42,13 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             </h1>
             <Link
               href="#cursos"
-              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
+              className="mt-7 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 hover:bg-accent-light focus-visible:outline-none focus-visible:ring-4 active:bg-yellow-400"
             >
               Cursos
             </Link>
           </div>
         </div>
-        <section id="sobrenos" className="mb-12">
+        <section id="sobrenos" className="mb-12 scroll-mt-10">
           <h2 className="mb-6 text-center text-4xl font-bold text-primary">Sobre Nós</h2>
           <p className="mx-auto max-w-xl text-base text-body-light dark:text-body-dark">
             Nossos cursos são feitos para te ajudar a conseguir passar suas provas tranquilamente.
@@ -55,7 +56,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
             chegar!
           </p>
         </section>
-        <section id="cursos" className="my-24 md:my-36">
+        <section id="cursos" className="my-24 scroll-mt-10 md:my-36">
           <h2 className="mb-6 text-center text-4xl font-bold text-primary">Cursos</h2>
           <div className="space-y-8">
             <input
@@ -66,8 +67,9 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
               required
             />
             <div className="mx-auto hidden max-w-4xl grid-cols-2 gap-4 rounded-md sm:grid md:grid-cols-3">
-              {items.map((item, i) => (
-                <Dialog item={item} />
+              {items?.map((item, i) => (
+                // NOTE: Fix this
+                <Dialog key={i} item={item} />
               ))}
             </div>
             <div className="mx-auto max-w-xl">

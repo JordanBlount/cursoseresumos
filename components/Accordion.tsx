@@ -9,6 +9,7 @@ export interface CursoItem {
   description?: string
   tag: string
   content?: string
+  link: string
 }
 
 // const items: AccordionItem[] = [

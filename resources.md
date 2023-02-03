@@ -18,8 +18,8 @@ TODO
 
 - Fine details to finish
 
-  - Resize X button in dialog view
-  - Create reusable dialog component for dialog trigger grid (large screens)
+  - (done) Resize X button in dialog view
+  - (done) Create reusable dialog component for dialog trigger grid (large screens)
   - Create search function (combine title, tag, text, description into string to be search)
   - Add styling to footer links (hover, pressed) like nav
   - Fix h1 in the hero section
@@ -29,6 +29,7 @@ TODO
   - Create "Curso" model to input into the CMS for Carla
   - Add "NOVO" tag onto the dialog triggers
   - Make function to show "NOVO" tag for certain amount of time after the item has originally been published (like 10 days)
+  - (done) Add hover/active styles to all buttons/links
 
 - Fixes
   - Remove zooming from search input

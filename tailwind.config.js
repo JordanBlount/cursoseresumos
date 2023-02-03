@@ -29,6 +29,7 @@ module.exports = {
         dark: '#22272e',
         primary: '#037A76',
         accent: '#E9DAAC',
+        'accent-light': colors.yellow[200],
         'button-text': '#616161',
         body: {
           light: '#262626',

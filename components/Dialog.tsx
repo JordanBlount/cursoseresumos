@@ -4,6 +4,7 @@ import { Cross1Icon } from '@radix-ui/react-icons'
 import { clsx } from 'clsx'
 import React, { Fragment, useState } from 'react'
 import type { CursoItem } from './Accordion'
+import { Link } from './Link'
 
 interface DialogProps {
   item: CursoItem
@@ -17,8 +18,9 @@ const Dialog = ({ item }: DialogProps) => {
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <DialogPrimitive.Trigger asChild>
-        <button className="inline-flex cursor-pointer items-center justify-between gap-2 rounded-md bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400">
+        <button className="inline-flex cursor-pointer items-center justify-between rounded-md bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 sm:gap-1 lg:gap-2">
           <div className="flex flex-col">
+            {/* NOTE: I'll probably change this so that the text is scalable. When it is just "A Biologia: Parte 1", the text wraps badly */}
             <span className="text-base font-bold leading-tight text-white">{item.header}</span>
             <span className="text-sm font-light text-gray-300">{item.tag}</span>
           </div>
@@ -67,7 +69,7 @@ const Dialog = ({ item }: DialogProps) => {
                 'max-w-lg rounded-md p-8 md:w-full',
                 'top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]',
                 'bg-prompt-content-light dark:bg-prompt-content-dark', //bg-gray-800
-                'focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75',
+                'focus:outline-none focus-visible:ring focus-visible:ring-emerald-400 focus-visible:ring-opacity-75',
                 'border border-gray-500 shadow-lg dark:border-gray-800'
               )}
             >
@@ -83,25 +85,26 @@ const Dialog = ({ item }: DialogProps) => {
                 risus scelerisque. Pharetra nullam feugiat blandit dictum sit vitae risus.
               </div>
               <div className="mt-4 flex justify-center">
-                <DialogPrimitive.Close
+                <Link
+                  href={item.link}
                   className={clsx(
                     'inline-flex select-none justify-center rounded-md px-4 py-2 font-bold',
-                    'bg-accent text-button-text hover:bg-purple-700 dark:bg-accent dark:hover:bg-purple-600',
+                    'cursor-pointer bg-accent text-button-text hover:bg-accent-light active:bg-yellow-400',
                     'border border-transparent',
-                    'focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'
+                    'focus:outline-none focus-visible:ring focus-visible:ring-emerald-400 focus-visible:ring-opacity-75'
                   )}
                 >
                   Compre
-                </DialogPrimitive.Close>
+                </Link>
               </div>
 
               <DialogPrimitive.Close
                 className={clsx(
                   'absolute top-3.5 right-3.5 inline-flex items-center justify-center rounded-full p-1',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'
+                  'focus:outline-none focus-visible:ring focus-visible:ring-emerald-400 focus-visible:ring-opacity-75'
                 )}
               >
-                <Cross1Icon className="h-4 w-4 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />
+                <Cross1Icon className="h-8 w-8 text-gray-500 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-400" />
               </DialogPrimitive.Close>
             </DialogPrimitive.Content>
           </Transition.Child>
