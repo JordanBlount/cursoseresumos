@@ -18,7 +18,7 @@ const Dialog = ({ item }: DialogProps) => {
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <DialogPrimitive.Trigger asChild>
-        <button className="inline-flex cursor-pointer items-center justify-between rounded-md bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 sm:gap-1 lg:gap-2">
+        <button className="relative inline-flex cursor-pointer items-center justify-between rounded-md bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 sm:gap-1 lg:gap-2">
           <div className="flex flex-col">
             {/* NOTE: I'll probably change this so that the text is scalable. When it is just "A Biologia: Parte 1", the text wraps badly */}
             <span className="text-base font-bold leading-tight text-white">{item.header}</span>
@@ -38,6 +38,9 @@ const Dialog = ({ item }: DialogProps) => {
               />
             </svg>
           </div>
+          <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
+            NOVO
+          </span>
         </button>
       </DialogPrimitive.Trigger>
       <DialogPrimitive.Portal forceMount>

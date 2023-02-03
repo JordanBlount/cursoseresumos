@@ -43,8 +43,11 @@ const Accordion = (props: AccordionProps) => {
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
-          className="w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
+          className="relative w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
         >
+          <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
+            NOVO
+          </span>
           <AccordionPrimitive.Header className="focus-vsisible:bg-red-100 w-full rounded-t-[inherit] rounded-b-[inherit]">
             <AccordionPrimitive.Trigger
               className={clsx(

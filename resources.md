@@ -21,7 +21,7 @@ TODO
   - (done) Resize X button in dialog view
   - (done) Create reusable dialog component for dialog trigger grid (large screens)
   - Create search function (combine title, tag, text, description into string to be search)
-  - Add styling to footer links (hover, pressed) like nav
+  - (done) Add styling to footer links (hover, pressed) like nav
   - Fix h1 in the hero section
   - Fix scroll padding on sections (add some on top)
   - Change search input (I want one that includes a search icon. GOOGLE)
