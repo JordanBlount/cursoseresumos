@@ -1,5 +1,5 @@
 import { PageSeo } from 'components/SEO'
-import React, { LegacyRef } from 'react'
+import React, { LegacyRef, useState } from 'react'
 import { Accordion, CursoItem } from '~/components/Accordion'
 import Container from '~/components/Container'
 import { Dialog } from '~/components/Dialog'
@@ -7,6 +7,7 @@ import { Link } from '~/components/Link'
 import { HEADER_HEIGHT } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { BlogFrontMatter } from '~/types'
+import accents from 'remove-accents'
 
 const items: CursoItem[] = Array(4).fill({
   header: 'A Biología: Parte 1',
@@ -17,7 +18,29 @@ const items: CursoItem[] = Array(4).fill({
   link: 'https://google.com',
 })
 
+items.push({
+  header: 'I am crazy',
+  description: ' - Um resumo da ciênica moderna',
+  tag: 'Curso Livres',
+  content:
+    'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
+  link: 'https://google.com',
+})
+
 export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
+  let [searchValue, setSearchValue] = useState('')
+  let filteredCourses = items.filter((course) => {
+    // NOTE: I can add things that can be searched here
+    let searchContent = course.header + course.description + course.content + course.tag
+    // NOTE: This may cause some slowdown, so I may eventually remove it. It makes search work without worrying about accents
+    searchContent = accents.remove(searchContent)
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  })
+
+  const handleChange = (e) => {
+    setSearchValue(e.target.value)
+  }
+
   return (
     <>
       <PageSeo
@@ -61,21 +84,37 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         <section id="cursos" className="my-24 scroll-mt-10 md:my-36">
           <h2 className="mb-6 text-center text-4xl font-bold text-primary">Cursos</h2>
           <div className="space-y-8">
-            <input
-              type="text"
-              id="course-search"
-              className="mx-auto block w-full max-w-xl rounded-lg border border-gray-300 bg-gray-100/20 p-2.5 text-sm text-gray-900 focus-visible:border-blue-500 focus-visible:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus-visible:border-blue-500 dark:focus-visible:ring-blue-500"
-              placeholder="Busca"
-              required
-            />
-            <div className="mx-auto hidden max-w-4xl grid-cols-2 gap-4 rounded-md sm:grid md:grid-cols-3">
-              {items?.map((item, i) => (
-                // NOTE: Fix this
-                <Dialog key={i} item={item} />
-              ))}
-            </div>
+            <form>
+              <label className="sr-only" htmlFor="course-search">
+                Search
+              </label>
+              <input
+                type="text"
+                id="course-search"
+                className="mx-auto block w-full max-w-xl rounded-lg border border-gray-300 bg-gray-100/20 py-2.5 px-4 text-base text-gray-800 focus-visible:border-emerald-400 focus-visible:ring-2 focus-visible:ring-emerald-400 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus-visible:border-emerald-400 dark:focus-visible:ring-emerald-400"
+                placeholder="Busca"
+                value={searchValue}
+                onChange={handleChange}
+                required
+              />
+            </form>
+            {!filteredCourses.length && (
+              <>
+                <div className="mx-auto max-w-xl text-center text-xl">Nenhum curso achado.</div>
+              </>
+            )}
+            {filteredCourses.length > 0 && (
+              <>
+                <div className="mx-auto hidden max-w-4xl grid-cols-2 gap-4 rounded-md sm:grid md:grid-cols-3">
+                  {filteredCourses?.map((item, i) => (
+                    // NOTE: Fix this
+                    <Dialog key={i} item={item} />
+                  ))}
+                </div>
+              </>
+            )}
             <div className="mx-auto max-w-xl">
-              <Accordion />
+              <Accordion items={filteredCourses} />
             </div>
           </div>
         </section>

@@ -10,6 +10,7 @@ export interface CursoItem {
   tag: string
   content?: string
   link: string
+  date?: string
 }
 
 // const items: AccordionItem[] = [
@@ -27,19 +28,21 @@ export interface CursoItem {
 //   },
 // ]
 
-const items: CursoItem[] = Array(10).fill({
-  header: 'A Biología: Parte 1 - Um resumo da ciênica moderna',
-  tag: 'Curso Livres',
-  content:
-    'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-})
+// const items: CursoItem[] = Array(10).fill({
+//   header: 'A Biología: Parte 1 - Um resumo da ciênica moderna',
+//   tag: 'Curso Livres',
+//   content:
+//     'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
+// })
 
-interface AccordionProps {}
+interface AccordionProps {
+  items: CursoItem[]
+}
 
-const Accordion = (props: AccordionProps) => {
+const Accordion = ({ items }: AccordionProps) => {
   return (
     <AccordionPrimitive.Root type="single" defaultValue="item-1" className={clsx('sm:hidden')}>
-      {items.map(({ header, tag, content }, i) => (
+      {items?.map(({ header, tag, content }, i) => (
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}

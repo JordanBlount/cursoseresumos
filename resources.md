@@ -9,7 +9,7 @@ TODO
   - (done) Add focus ring colors
   - (done) Add Radix UI (along with tailwind stuff)
   - (done) Style links and buttons
-  - Create search
+  - (done) Create search
   - Add CMS (Sanity or Contentful; look for one that supports Brazilian Portuguese)
 
 - Fine details to finish
@@ -20,9 +20,9 @@ TODO
   - (done) Fix scroll padding on sections (add some on top)
   - (done) Add "NOVO" tag onto the dialog triggers
   - (done) Add hover/active styles to all buttons/links
-  - Fix h1 in the hero section
-  - Create search function (combine title, tag, text, description into string to be search)(WITHOUT ZOOM)
-  - Change search input (I want one that includes a search icon. GOOGLE)
+  - (done) Fix h1 in the hero section
+  - (done) Create search function (combine title, tag, text, description into string to be search)(WITHOUT ZOOM)
+  - (done) Change search input (I want one that includes a search icon. GOOGLE)
   - Add data fetching (SSG with refresh) in index.tsx (for getting data from CMS)
   - Create "Curso" model to input into the CMS for Carla
   - Make function to show "NOVO" tag for certain amount of time after the item has originally been published (like 10 days)
