@@ -33,8 +33,10 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         >
           {/* mt-[5rem] */}
           {/* -mt-[140px] */}
-          <div className="dark:opacity-15 absolute top-16 left-10 z-[-1] hidden h-[400px] w-[500px] bg-dots bg-[length:1rem_1rem] opacity-10 sm:block xl:w-[650px]"></div>
-          <div className="-mt-[280px] flex flex-col items-center justify-center pt-[5rem]">
+          {/* <div className="dark:opacity-15 absolute top-16 left-10 z-[-1] hidden h-[400px] w-[500px] bg-dots bg-[length:1rem_1rem] opacity-10 sm:block xl:w-[650px]"></div> */}
+
+          <div className="dark:opacity-15 absolute z-[-1] hidden h-[400px] w-[500px] bg-dots bg-[length:1rem_1rem] opacity-10 sm:block sm:-translate-x-16 sm:-translate-y-10 md:-translate-x-20 md:-translate-y-8 xl:w-[650px] xl:-translate-x-36"></div>
+          <div className="-mt-[140px] flex flex-col items-center justify-center pt-[5rem]">
             {/* NOTE: Feels slightly hacky, but removes all widows */}
             <h1 className="mx-auto text-center text-3xl font-bold text-h1-light dark:text-h1-dark sm:text-5xl sm:leading-none md:text-[54px]">
               Cursos para te ajudar
