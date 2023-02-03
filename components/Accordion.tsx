@@ -42,7 +42,7 @@ interface AccordionProps {
 const Accordion = ({ items }: AccordionProps) => {
   return (
     <AccordionPrimitive.Root type="single" defaultValue="item-1" className={clsx('sm:hidden')}>
-      {items?.map(({ header, tag, content }, i) => (
+      {items?.map(({ header, tag, content, description, date, link }, i) => (
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
@@ -76,7 +76,7 @@ const Accordion = ({ items }: AccordionProps) => {
             <div className="flex flex-col items-center justify-center">
               <div className="text-base text-body-light dark:text-body-dark">{content}</div>
               <Link
-                href="#cursos"
+                href={link}
                 className="mt-4 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
               >
                 Compre
