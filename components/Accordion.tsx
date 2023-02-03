@@ -43,20 +43,20 @@ const Accordion = (props: AccordionProps) => {
         <AccordionPrimitive.Item
           key={`header-${i}`}
           value={`item-${i + 1}`}
-          className="relative w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
+          className="w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
         >
-          <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
-            NOVO
-          </span>
           <AccordionPrimitive.Header className="focus-vsisible:bg-red-100 w-full rounded-t-[inherit] rounded-b-[inherit]">
             <AccordionPrimitive.Trigger
               className={clsx(
-                'group',
+                'group relative',
                 'focus:outline-none',
                 'rounded-t-[inherit] radix-state-closed:rounded-b-[inherit]',
                 'focus-within:z-1 inline-flex w-full items-center justify-between gap-2 bg-primary px-7 py-8 text-left focus-within:relative hover:bg-[#026a66] focus-visible:shadow-[0_0px_0px_4px_rgba(233,218,172,1)] radix-state-open:bg-[#026a66]'
               )}
             >
+              <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
+                NOVO
+              </span>
               <div className="flex flex-col">
                 <span className="text-base font-bold text-white">{header}</span>
                 <span className="font-base text-base text-gray-300">{tag}</span>

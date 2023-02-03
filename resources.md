@@ -27,7 +27,7 @@ TODO
   - Change search input (I want one that includes a search icon. GOOGLE)
   - Add data fetching (SSG with refresh) in index.tsx (for getting data from CMS)
   - Create "Curso" model to input into the CMS for Carla
-  - Add "NOVO" tag onto the dialog triggers
+  - (done) Add "NOVO" tag onto the dialog triggers
   - Make function to show "NOVO" tag for certain amount of time after the item has originally been published (like 10 days)
   - (done) Add hover/active styles to all buttons/links
 
