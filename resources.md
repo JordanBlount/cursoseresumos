@@ -23,15 +23,15 @@ TODO
   - (done) Fix h1 in the hero section
   - (done) Create search function (combine title, tag, text, description into string to be search)(WITHOUT ZOOM)
   - (done) Change search input (I want one that includes a search icon. GOOGLE)
+  - (done) Create "Curso" model to input into the CMS for Carla
   - Add data fetching (SSG with refresh) in index.tsx (for getting data from CMS)
-  - Create "Curso" model to input into the CMS for Carla
   - Make function to show "NOVO" tag for certain amount of time after the item has originally been published (like 10 days)
   - Add all things to make website seem like "mobile app" (There is a tutorial somewhere)
   - Create favicon
   - Create og images
 
 - Fixes
-  - Remove zooming from search input
+  - (done) Remove zooming from search input
 
 https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-using-ui-libraries-a8208197c268
 

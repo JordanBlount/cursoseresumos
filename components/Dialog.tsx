@@ -1,4 +1,5 @@
 import { Transition } from '@headlessui/react'
+import { PortableText } from '@portabletext/react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import { clsx } from 'clsx'
@@ -13,16 +14,14 @@ interface DialogProps {
 const Dialog = ({ item }: DialogProps) => {
   let [isOpen, setIsOpen] = useState(false)
 
-  console.log(isOpen)
-
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
       <DialogPrimitive.Trigger asChild>
         <button className="relative inline-flex cursor-pointer items-center justify-between rounded-md bg-primary px-7 py-8 text-left hover:bg-[#026a66] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 sm:gap-1 lg:gap-2">
           <div className="flex flex-col">
             {/* NOTE: I'll probably change this so that the text is scalable. When it is just "A Biologia: Parte 1", the text wraps badly */}
-            <span className="text-base font-bold leading-tight text-white">{item.header}</span>
-            <span className="text-sm font-light text-gray-300">{item.tag}</span>
+            <span className="text-base font-bold leading-tight text-white">{item.nome}</span>
+            <span className="text-sm font-light text-gray-300">{item.categoria}</span>
           </div>
           <div>
             <svg
@@ -77,15 +76,23 @@ const Dialog = ({ item }: DialogProps) => {
               )}
             >
               <DialogPrimitive.Title className="text-2xl font-bold leading-tight text-h1-light dark:text-h1-dark">
-                A Biología: Parte 1 - A study of the best science
+                {`${item.nome}${!item.descricao ? '' : ' - ' + item.descricao}`}
               </DialogPrimitive.Title>
               <DialogPrimitive.Description className="text-lg font-medium text-gray-500 dark:text-gray-400">
-                Cursos Livres
+                {item.categoria}
               </DialogPrimitive.Description>
 
-              <div className="mt-4 h-60 max-h-64 overflow-y-scroll text-body-light dark:text-body-dark">
-                Lorem ipsum dolor sit amet consectetur. Congue ut lorem nunc volutpat sed in amet
-                risus scelerisque. Pharetra nullam feugiat blandit dictum sit vitae risus.
+              <div className="prose mt-4 h-60 max-h-64 overflow-y-scroll text-body-light dark:text-body-dark">
+                {!item.conteudo && (
+                  <>
+                    <div className="flex h-full items-center justify-center">Não tem descrição</div>
+                  </>
+                )}
+                {item.conteudo && (
+                  <>
+                    <PortableText value={item.conteudo} />
+                  </>
+                )}
               </div>
               <div className="mt-4 flex justify-center">
                 <Link

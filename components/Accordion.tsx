@@ -1,3 +1,4 @@
+import { PortableText } from '@portabletext/react'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { clsx } from 'clsx'
@@ -5,35 +6,14 @@ import React from 'react'
 import { Link } from './Link'
 
 export interface CursoItem {
-  header: string
-  description?: string
-  tag: string
-  content?: string
+  _id: string
+  nome: string
+  descricao?: string
+  categoria: string
+  conteudo?: any
   link: string
   date?: string
 }
-
-// const items: AccordionItem[] = [
-//   {
-//     header: 'A Biología: Parte 1',
-//     tag: 'Curso Livres',
-//     content:
-//       'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-//   },
-//   {
-//     header: 'Why are goats so popular at Vercel',
-//     tag: 'Curso Livres',
-//     content:
-//       'Goats are popular at Vercel for a few reasons. First, they provide a healthier and more sustainable solution for grass cutting and vegetation control. Additionally, goats are able to traverse very steep terrain. This makes them perfect for providing maintenance in areas that are difficult to access. Finally, their presence is said to provide a calming atmosphere, which is especially beneficial in stressful engineering environments.',
-//   },
-// ]
-
-// const items: CursoItem[] = Array(10).fill({
-//   header: 'A Biología: Parte 1 - Um resumo da ciênica moderna',
-//   tag: 'Curso Livres',
-//   content:
-//     'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-// })
 
 interface AccordionProps {
   items: CursoItem[]
@@ -42,9 +22,9 @@ interface AccordionProps {
 const Accordion = ({ items }: AccordionProps) => {
   return (
     <AccordionPrimitive.Root type="single" defaultValue="item-1" className={clsx('sm:hidden')}>
-      {items?.map(({ header, tag, content, description, date, link }, i) => (
+      {items?.map(({ _id, nome, categoria, conteudo, descricao, date, link }, i) => (
         <AccordionPrimitive.Item
-          key={`header-${i}`}
+          key={`header-${_id}`}
           value={`item-${i + 1}`}
           className="w-full first:rounded-t-md last:rounded-b-md [&:not(:last-child)]:border-b [&:not(:last-child)]:border-b-primary/60"
         >
@@ -61,8 +41,8 @@ const Accordion = ({ items }: AccordionProps) => {
                 NOVO
               </span>
               <div className="flex flex-col">
-                <span className="text-base font-bold text-white">{header}</span>
-                <span className="font-base text-base text-gray-300">{tag}</span>
+                <span className="text-base font-bold text-white">{nome}</span>
+                <span className="font-base text-base text-gray-300">{categoria}</span>
               </div>
               <ChevronDownIcon
                 className={clsx(
@@ -73,11 +53,22 @@ const Accordion = ({ items }: AccordionProps) => {
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content className="w-full rounded-b-[inherit] border-x border-x-prompt-border-l-r-light bg-prompt-content-light px-7 pt-4 pb-4 dark:border-x-prompt-border-l-r-dark dark:bg-prompt-content-dark">
-            <div className="flex flex-col items-center justify-center">
-              <div className="text-base text-body-light dark:text-body-dark">{content}</div>
+            <div className="flex flex-col">
+              <div className="prose text-base text-body-light dark:text-body-dark">
+                {!conteudo && (
+                  <>
+                    <div>Não tem descrição</div>
+                  </>
+                )}
+                {conteudo && (
+                  <>
+                    <PortableText value={conteudo} />
+                  </>
+                )}
+              </div>
               <Link
                 href={link}
-                className="mt-4 block rounded-lg bg-accent py-3 px-7 font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
+                className="mx-auto mt-4 block max-w-fit rounded-lg bg-accent py-3 px-7 text-center font-bold uppercase text-button-text ring-emerald-400 focus-visible:outline-none focus-visible:ring-4"
               >
                 Compre
               </Link>

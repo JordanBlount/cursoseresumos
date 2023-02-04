@@ -6,32 +6,38 @@ import { Dialog } from '~/components/Dialog'
 import { Link } from '~/components/Link'
 import { HEADER_HEIGHT } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
-import type { BlogFrontMatter } from '~/types'
 import accents from 'remove-accents'
+import type { GetStaticProps } from 'next/types'
+import { createClient } from 'next-sanity'
 
-const items: CursoItem[] = Array(4).fill({
-  header: 'A Biología: Parte 1',
-  description: ' - Um resumo da ciênica moderna',
-  tag: 'Curso Livres',
-  content:
-    'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-  link: 'https://google.com',
+const client = createClient({
+  projectId: 'qkeuvhb9',
+  dataset: 'production',
+  apiVersion: '2023-02-04',
+  useCdn: false,
 })
 
-items.push({
-  header: 'I am crazy',
-  description: ' - Um resumo da ciênica moderna',
-  tag: 'Curso Livres',
-  content:
-    'Radix Primitives is a low-level UI component library with a focus on accessibility, customization and developer experience. You can use these components either as the base layer of your design system, or adopt them incrementally.',
-  link: 'https://google.com',
-})
+export const getStaticProps: GetStaticProps = async () => {
+  const cursos = await client.fetch(`
+    *[_type == "curso"]{
+     ...,
+      "categoria": categoria->nome
+    }
+  `)
 
-export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
+  return {
+    props: {
+      cursos,
+    },
+  }
+}
+
+export default function Home({ cursos }) {
   let [searchValue, setSearchValue] = useState('')
-  let filteredCourses = items.filter((course) => {
+  let filteredCourses = cursos.filter((course) => {
     // NOTE: I can add things that can be searched here
-    let searchContent = course.header + course.description + course.content + course.tag
+    // FIXME: Make sure that if a property does not exist, it does not add "Null" into the string
+    let searchContent = course?.nome + course?.descricao + course?.conteudo + course?.categoria
     // NOTE: This may cause some slowdown, so I may eventually remove it. It makes search work without worrying about accents
     searchContent = accents.remove(searchContent)
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
@@ -108,7 +114,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
                 <div className="mx-auto hidden max-w-4xl grid-cols-2 gap-4 rounded-md sm:grid md:grid-cols-3">
                   {filteredCourses?.map((item, i) => (
                     // NOTE: Fix this
-                    <Dialog key={i} item={item} />
+                    <Dialog key={item._id} item={item} />
                   ))}
                 </div>
               </>
