@@ -3,9 +3,12 @@ import { PortableText } from '@portabletext/react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import { clsx } from 'clsx'
+import dayjs from 'dayjs'
 import React, { Fragment, useState } from 'react'
 import type { CursoItem } from './Accordion'
 import { Link } from './Link'
+var utc = require('dayjs/plugin/utc')
+dayjs.extend(utc)
 
 interface DialogProps {
   item: CursoItem
@@ -13,6 +16,11 @@ interface DialogProps {
 
 const Dialog = ({ item }: DialogProps) => {
   let [isOpen, setIsOpen] = useState(false)
+
+  const createdAt = dayjs(new Date(item._createdAt))
+  const now = dayjs()
+
+  const showNovo = createdAt.diff(now, 'day') <= 10
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
@@ -37,9 +45,11 @@ const Dialog = ({ item }: DialogProps) => {
               />
             </svg>
           </div>
-          <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
-            NOVO
-          </span>
+          {showNovo && (
+            <span className="absolute -right-2 -top-2 block rounded-lg bg-accent py-1 px-1.5 text-xs font-bold text-button-text">
+              NOVO
+            </span>
+          )}
         </button>
       </DialogPrimitive.Trigger>
       <DialogPrimitive.Portal forceMount>
@@ -82,7 +92,7 @@ const Dialog = ({ item }: DialogProps) => {
                 {item.categoria}
               </DialogPrimitive.Description>
 
-              <div className="prose mt-4 h-60 max-h-64 overflow-y-scroll text-body-light dark:text-body-dark">
+              <div className="prose mt-4 h-60 max-h-64 overflow-y-scroll text-body-light dark:text-body-dark dark:prose-invert">
                 {!item.conteudo && (
                   <>
                     <div className="flex h-full items-center justify-center">Não tem descrição</div>

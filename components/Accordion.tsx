@@ -13,6 +13,7 @@ export interface CursoItem {
   conteudo?: any
   link: string
   date?: string
+  _createdAt: string
 }
 
 interface AccordionProps {
@@ -54,7 +55,7 @@ const Accordion = ({ items }: AccordionProps) => {
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content className="w-full rounded-b-[inherit] border-x border-x-prompt-border-l-r-light bg-prompt-content-light px-7 pt-4 pb-4 dark:border-x-prompt-border-l-r-dark dark:bg-prompt-content-dark">
             <div className="flex flex-col">
-              <div className="prose text-base text-body-light dark:text-body-dark">
+              <div className="dark:text-body-darkn prose text-base text-body-light dark:text-body-dark dark:prose-invert">
                 {!conteudo && (
                   <>
                     <div>Não tem descrição</div>

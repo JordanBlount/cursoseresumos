@@ -29,6 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       cursos,
     },
+    revalidate: 20,
   }
 }
 
