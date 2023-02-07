@@ -32,10 +32,16 @@ TODO
   - Create favicon
   - Create og images
   - Add validation/required on fields for "Curso" model in Sanity
-  - Configuration
+  - Configuration for site in CMS
+  - Add accessibility logo (BIG maybe)
 
 - Fixes
+
   - (done) Remove zooming from search input
+  - Fix viewport calculation for homescreen. (Apparently, "svh" units may not be working on Carla's phone. I have to do a different calculation. Both in "index.tsx" and "LayoutWrapper.tsx" and "constant/index.ts")
+
+- Final touches
+  - Add web domain to CORS in CMS (https://www.sanity.io/docs/connect-your-content-to-next-js)
 
 https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-using-ui-libraries-a8208197c268
 

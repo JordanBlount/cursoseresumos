@@ -1,14 +1,29 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Curso Idealtec",
+  "short_name": "Idealtec",
   "icons": [
     {
-      "src": "/hat.png",
-      "sizes": "72x72",
+      "src": "/favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    }
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+    {
+      "src": "/favicon-128x128.png",
+      "sizes": "128x128",
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
+  "theme_color": "#037A76",
   "background_color": "#000000",
   "display": "standalone"
 }
