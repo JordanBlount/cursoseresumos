@@ -57,7 +57,7 @@ export default function Home({ cursos }) {
       <Container>
         {/* NOTE: I can add "-10px" here in the mininum height to expose content under this */}
         <div
-          style={{ minHeight: `calc(100svh - ${HEADER_HEIGHT} - 0.5rem)` }}
+          style={{ minHeight: `calc(100vh - ${HEADER_HEIGHT} - 0.5rem)` }}
           className={`relative flex flex-col items-center justify-center`}
           // className="relative"
         >

@@ -29,7 +29,7 @@ TODO
   - (done) Add refresh rate for SSG
   - (done) Make function to show "NOVO" tag for certain amount of time after the item has originally been published (like 10 days)
   - Add all things to make website seem like "mobile app" (There is a tutorial somewhere)
-  - Create favicon
+  - (done) Create favicon
   - Create og images
   - Add validation/required on fields for "Curso" model in Sanity
   - Configuration for site in CMS
